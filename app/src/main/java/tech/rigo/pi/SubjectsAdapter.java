@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.TwoLineListItem;
+import android.graphics.Color;
 
 import java.util.ArrayList;
 
@@ -53,10 +54,16 @@ public class SubjectsAdapter extends BaseAdapter {
 
         TextView text1 = twoLineListItem.getText1();
         TextView text2 = twoLineListItem.getText2();
-
+        
         text1.setText(subjects.get(position).getName());
         text2.setText(subjects.get(position).getFormulaCount() + " Formulas");
-
+        
+        String hexColor = String.format("#%06X", (0xFFFFFF & subjects.get(position).getColorHex()));
+        text1.setTextColor(Color.parseColor(hexColor));
+        
+        text1.setTextSize(22);
+        text2.setTextSize(14);
+        
         return twoLineListItem;
     }
 }

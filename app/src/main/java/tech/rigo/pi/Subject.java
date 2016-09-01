@@ -6,7 +6,8 @@ package tech.rigo.pi;
 public class Subject {
     String name;
     int formulaCount;
-
+    int colorHex;
+    
     public String getName() {
         return name;
     }
@@ -21,5 +22,13 @@ public class Subject {
     
     public void setFormulaCount(int formulaCount) {
         this.formulaCount = formulaCount;
+    }
+    
+    public int getColorHex() {
+        return colorHex;
+    }
+    
+    public void setColorHex(int value) {
+        this.colorHex = value;
     }
 }

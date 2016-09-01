@@ -68,11 +68,13 @@ public class SubjectsFragment extends Fragment {
                 JSONObject jo_inside = m_jArry.getJSONObject(i);
                 Log.d("Subject-->", jo_inside.getString("subject_name"));
                 String subject_name = jo_inside.getString("subject_name");
+                int color_hex = jo_inside.getInt("color_hex");
                 
                 //Add your values in your `ArrayList` as below:
                 subject = new Subject();
                 subject.setName(subject_name);
                 subject.setFormulaCount(10); // Test
+                subject.setColorHex(color_hex);
                 
                 subjects.add(subject);
             }
